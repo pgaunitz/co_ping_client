@@ -5,11 +5,11 @@ import { onLogin } from "../modules/authentication";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const loginMessage = useSelector((state) => state.loginMessage);
+  const loginMessage = useSelector(state => state.loginMessage);
 
   return (
     <Box>
-      <Form id="login-form" onSubmit={(event) => onLogin(event, dispatch)}>
+      <Form id="login-form" onSubmit={event => onLogin(event, dispatch)}>
         <TextInput id="email" name="email" placeholder="email" />
         <TextInput
           id="password"
@@ -17,8 +17,13 @@ const LoginForm = () => {
           type="password"
           placeholder="password"
         />
-        <Button color="white" type="submit" label="Submit" />
-        <Button color="white" label="Back" onClick={() => dispatch({type: "CLOSE_LOGIN"})} />
+        <Button color="white" type="submit" label="Submit" margin="small" />
+        <Button
+          color="white"
+          label="Back"
+          margin="small"
+          onClick={() => dispatch({ type: "CLOSE_LOGIN" })}
+        />
       </Form>
       <Text id="login-error-message">{loginMessage}</Text>
     </Box>

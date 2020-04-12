@@ -1,13 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Button, Box, Text } from "grommet";
+import { onLogout } from "../modules/authentication";
 
 const LoginMessage = () => {
-  const loginMessage = useSelector((state) => state.loginMessage);
+  const dispatch = useDispatch();
+  const loginMessage = useSelector(state => state.loginMessage);
   return (
     <Box>
       <Text id="welcome-message">{loginMessage}</Text>
-      <Button label="Logout" />
+      <Button label="Logout" onClick={() => onLogout(dispatch)} />
     </Box>
   );
 };
