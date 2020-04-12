@@ -8,6 +8,16 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         ...action.payload,
       };
+    case actionTypes.AUTHENTICATE:
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case actionTypes.LOGIN_MESSAGE:
+      return {
+        ...state,
+        ...action.payload,
+      };
     default:
       return state;
   }

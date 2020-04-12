@@ -34,7 +34,7 @@ describe("Admin can not log in", () => {
       url: "**/auth/sign_in",
       status: "401",
       response: {
-        errors: ["Invalid login credentials, please try again."],
+        errors: ["Invalid login credentials. Please try again."],
         success: false,
       },
     });
@@ -50,7 +50,7 @@ describe("Admin can not log in", () => {
     });
     cy.get("#message").should(
       "contain",
-      "Invalid login credentials, please try again."
+      "Invalid login credentials. Please try again."
     );
   });
 });
