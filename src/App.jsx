@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import LoginButton from "./components/LoginButton"
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div id="all-app">
       <h1>CO-Ping!</h1>
+      <LoginButton />
     </div>
   );
-}
+};
 
 export default App;

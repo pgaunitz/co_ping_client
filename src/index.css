@@ -1,4 +1,4 @@
-* {
+body {
   background: #134e5e; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top right,
@@ -17,3 +17,4 @@ background-repeat: no-repeat;
   color: white;
   font-family: Futura;
 }
+
