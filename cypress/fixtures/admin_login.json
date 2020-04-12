@@ -1,0 +1,10 @@
+{
+  "data": {
+    "id": 1,
+    "name": "Admin Adminsson",
+    "email": "admin@mail.com",
+    "provider": "email",
+    "uid": "admin@mail.com",
+    "allow_password_change": false
+  }
+}

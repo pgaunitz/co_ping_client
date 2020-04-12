@@ -1,6 +1,6 @@
 describe("Admin can log in", () => {
   beforeEach(() => {
-    // cy.exec("yarn start")
+    cy.exec("yarn start")
     cy.server();
     cy.route({
       method: "POST",
@@ -20,7 +20,7 @@ describe("Admin can log in", () => {
     cy.get("#login-form").within(() => {
       cy.get("#email").type("admin@mail.com");
       cy.get("#password").type("password");
-      cy.get("button").contains("Sign in").click();
+      cy.get("button").contains("Submit").click();
     });
     cy.get("#message").should("contain", "Welcome back Admin Adminsson");
   });
@@ -46,7 +46,7 @@ describe("Admin can not log in", () => {
     cy.get("#login-form").within(() => {
       cy.get("#email").type("wrongmail.com");
       cy.get("#password").type("wrong");
-      cy.get("button").contains("Sign in").click();
+      cy.get("button").contains("Submit").click();
     });
     cy.get("#message").should(
       "contain",
