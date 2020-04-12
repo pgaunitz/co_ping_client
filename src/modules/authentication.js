@@ -5,31 +5,27 @@ const auth = new JtockAuth({
 });
 
 const onLogin = async (event, dispatch) => {
-  debugger
   try {
-  event.preventDefault();
-  let response = await auth
-    .signIn(event.target.email.value, event.target.passwords.value) 
-      dispatch({
-        type: "AUTHENTICATE",
-        payload: {
-          authenticated: true,
-          userEmail: response.data.email,
-          userName: response.data.name
-        }
-      });
-      dispatch({
-        type: "LOGIN_MESSAGE",
-        payload: {
-          message: `Welcome Back ${response.data.name}`,
-          showLoginForm: false,
-        },
-      });
-  } catch(error) {
-    debugger
-      let errorMessage = error.response.data.errors[0];
-      dispatch({ type: "LOGIN_MESSAGE", payload: { message: errorMessage } });
-    };
+    event.preventDefault();
+    let response = await auth.signIn(
+      event.target.email.value,
+      event.target.password.value
+    );
+    dispatch({
+      type: "AUTHENTICATE",
+      payload: {
+        authenticated: true,
+        userEmail: response.data.email,
+        userName: response.data.name,
+        loginMessage: `Welcome back ${response.data.name}`,
+        showLoginForm: false,
+      },
+    });
+  } catch (error) {
+    debugger;
+    let errorMessage = error.response.data.errors[0];
+    dispatch({ type: "AUTHENTICATE", payload: { loginMessage: errorMessage } });
+  }
 };
 
 const onLogout = (dispatch) => {
@@ -40,7 +36,7 @@ const onLogout = (dispatch) => {
     });
     dispatch({
       type: "LOGIN_MESSAGE",
-      payload: { message: "Hasta la vista!" },
+      payload: { loginMessage: "Hasta la vista!" },
     });
   });
 };

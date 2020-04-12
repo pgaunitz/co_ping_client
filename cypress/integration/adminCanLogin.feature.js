@@ -22,7 +22,7 @@ describe("Admin can log in", () => {
       cy.get("#password").type("password");
       cy.get("button").contains("Submit").click();
     });
-    cy.get("#message").should("contain", "Welcome back Admin Adminsson");
+    cy.get("#welcome-message").should("contain", "Welcome back Admin Adminsson");
   });
 });
 
@@ -48,9 +48,11 @@ describe("Admin can not log in", () => {
       cy.get("#password").type("wrong");
       cy.get("button").contains("Submit").click();
     });
-    cy.get("#message").should(
+    cy.get("#login-error-message").should(
       "contain",
       "Invalid login credentials. Please try again."
     );
+    cy.get("button").contains("Back").click()
+    cy.get("#login-form").should("not.exist")
   });
 });

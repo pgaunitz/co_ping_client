@@ -1,15 +1,15 @@
-import React from 'react'
-import { useSelector } from "react-redux"
-import { Button, Box } from "grommet"
+import React from "react";
+import { useSelector } from "react-redux";
+import { Button, Box, Text } from "grommet";
 
 const LoginMessage = () => {
- const userName = useSelector(state => state.userName)
+  const loginMessage = useSelector((state) => state.loginMessage);
   return (
     <Box>
-      {userName}
+      <Text id="welcome-message">{loginMessage}</Text>
       <Button label="Logout" />
-    </ Box>
-  )
-}
+    </Box>
+  );
+};
 
-export default LoginMessage
+export default LoginMessage;

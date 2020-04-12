@@ -1,5 +1,6 @@
 const initialState = {
-  showLoginForm: false
+  showLoginForm: false,
+  authenticated: false
 };
 
 export default initialState;
