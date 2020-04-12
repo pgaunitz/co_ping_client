@@ -18,7 +18,7 @@ const LoginForm = () => {
           placeholder="password"
         />
         <Button color="white" type="submit" label="Submit" />
-        <Button color="white" label="Back" />
+        <Button color="white" label="Back" onClick={() => dispatch({type: "CLOSE_LOGIN"})} />
       </Form>
       <Text id="login-error-message">{loginMessage}</Text>
     </Box>

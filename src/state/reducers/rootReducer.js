@@ -18,6 +18,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         ...action.payload,
       };
+    case actionTypes.CLOSE_LOGIN:
+      return {
+        ...state,
+        showLoginForm: false
+      }
     default:
       return state;
   }
