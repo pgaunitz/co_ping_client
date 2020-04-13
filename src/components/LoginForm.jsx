@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Form, TextInput, Button, Text } from "grommet";
 import { onLogin } from "../modules/authentication";
+import { CLOSE_LOGIN } from "../state/actions/actionTypes"
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const LoginForm = () => {
           color="white"
           label="Back"
           margin="small"
-          onClick={() => dispatch({ type: "CLOSE_LOGIN" })}
+          onClick={() => dispatch({ type: CLOSE_LOGIN })}
         />
       </Form>
       <Text id="login-error-message">{loginMessage}</Text>
