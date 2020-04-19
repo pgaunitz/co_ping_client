@@ -3,10 +3,13 @@ import LoginButton from "./components/LoginButton";
 import { useSelector } from "react-redux";
 import LoginMessage from "./components/LoginMessage";
 import LoginForm from "./components/LoginForm";
-import { Grommet, Main, Image } from "grommet";
+import { Grommet, Main, Image, Button } from "grommet";
 import grommet from "grommet/themes";
 import co_ping_Logo2 from "./images/co_ping_Logo2.png";
 import NotAdmin from "./components/NotAdmin";
+import PendingRequests from "./components/PendingRequests";
+import { Route } from "react-router";
+import { Link } from "react-router-dom";
 
 const App = () => {
   const authenticated = useSelector(state => state.authenticated);
@@ -20,6 +23,16 @@ const App = () => {
         {authenticated ? <LoginMessage /> : <LoginButton />}
         {showLoginForm && <LoginForm />}
         {userRole == "user" && <NotAdmin />}
+        <Route exact path="requests" component={PendingRequests} />
+        <Button
+          margin="small"
+          color="white"
+          label="Pending Requests"
+          id="show-requests"
+          as={Link}
+          to={{ pathname: "requests" }}
+        />
+        {userRole == "admin" && <PendingRequests />}
       </Main>
     </Grommet>
   );

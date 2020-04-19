@@ -12,6 +12,7 @@ const onLogin = async (event, dispatch) => {
       event.target.email.value,
       event.target.password.value
     );
+    debugger
     dispatch({
       type: AUTHENTICATE,
       payload: {
@@ -19,6 +20,7 @@ const onLogin = async (event, dispatch) => {
         userEmail: response.data.email,
         userName: response.data.name,
         userRole: response.data.role,
+        communityId: response.data.community_id,
         loginMessage: `Welcome ${response.data.name}`,
         showLoginForm: false
       }
