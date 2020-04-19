@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import LoginButton from "./components/LoginButton";
 import { useSelector } from "react-redux";
 import LoginMessage from "./components/LoginMessage";
@@ -6,10 +6,13 @@ import LoginForm from "./components/LoginForm";
 import { Grommet, Main, Image } from "grommet";
 import grommet from "grommet/themes";
 import co_ping_Logo2 from "./images/co_ping_Logo2.png";
+import Unused from './components/Unused'
 
 const App = () => {
   const authenticated = useSelector(state => state.authenticated);
   const showLoginForm = useSelector(state => state.showLoginForm);
+
+  const [show, setShow] = useState(false)
 
   return (
     <Grommet full theme={grommet}>
@@ -18,6 +21,7 @@ const App = () => {
         {authenticated ? <LoginMessage /> : <LoginButton />}
         {showLoginForm && <LoginForm />}
       </Main>
+      {show && <Unused />}
     </Grommet>
   );
 };
