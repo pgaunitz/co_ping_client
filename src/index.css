@@ -1,0 +1,20 @@
+body {
+  background: #134e5e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top right,
+    red,
+    #134e5e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+height: 100%;
+background-image: linear-gradient(
+  to top right,
+  #71b280,
+  #134e5e
+); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-repeat: no-repeat;
+}
+* {
+  color: white;
+  font-family: Futura;
+}
+
