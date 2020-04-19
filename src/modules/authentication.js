@@ -1,8 +1,8 @@
 import JtockAuth from "j-tockauth";
-import { AUTHENTICATE } from "../state/actions/actionTypes";
+import { AUTHENTICATE, LOGOUT } from "../state/actions/actionTypes";
 
 const auth = new JtockAuth({
-  host: "https://co-ping.herokuapp.com/"
+  host: "https://co-ping.herokuapp.com"
 });
 
 const onLogin = async (event, dispatch) => {
@@ -18,7 +18,8 @@ const onLogin = async (event, dispatch) => {
         authenticated: true,
         userEmail: response.data.email,
         userName: response.data.name,
-        loginMessage: `Welcome back ${response.data.name}`,
+        userRole: response.data.role,
+        loginMessage: `Welcome ${response.data.name}`,
         showLoginForm: false
       }
     });
@@ -31,7 +32,7 @@ const onLogin = async (event, dispatch) => {
 const onLogout = dispatch => {
   auth.signOut().then(() => {
     dispatch({
-      type: AUTHENTICATE,
+      type: LOGOUT,
       payload: {
         authenticated: false,
         userEmail: null,

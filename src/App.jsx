@@ -6,13 +6,12 @@ import LoginForm from "./components/LoginForm";
 import { Grommet, Main, Image } from "grommet";
 import grommet from "grommet/themes";
 import co_ping_Logo2 from "./images/co_ping_Logo2.png";
-import Unused from './components/Unused'
+import NotAdmin from "./components/NotAdmin";
 
 const App = () => {
   const authenticated = useSelector(state => state.authenticated);
   const showLoginForm = useSelector(state => state.showLoginForm);
-
-  const [show, setShow] = useState(false)
+  const userRole = useSelector((state) => state.userRole);
 
   return (
     <Grommet full theme={grommet}>
@@ -20,8 +19,8 @@ const App = () => {
         <img src={co_ping_Logo2}></img>
         {authenticated ? <LoginMessage /> : <LoginButton />}
         {showLoginForm && <LoginForm />}
+        {userRole == "user" && <NotAdmin />}
       </Main>
-      {show && <Unused />}
     </Grommet>
   );
 };

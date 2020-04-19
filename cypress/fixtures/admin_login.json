@@ -4,6 +4,7 @@
     "name": "Admin Adminsson",
     "email": "admin@mail.com",
     "provider": "email",
+    "role": "admin",
     "uid": "admin@mail.com",
     "allow_password_change": false
   }
