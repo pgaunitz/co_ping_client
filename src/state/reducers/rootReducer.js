@@ -16,12 +16,17 @@ const rootReducer = (state = initialState, action) => {
     case actionTypes.LOGOUT:
       return {
         ...initialState,
-        ...action.payload
+        ...action.payload,
       };
     case actionTypes.CLOSE_LOGIN:
       return {
         ...state,
         showLoginForm: false,
+      };
+    case actionTypes.SHOW_PENDING_REQUESTS:
+      return {
+        ...state,
+        showPendingRequests: true,
       };
     default:
       return state;
