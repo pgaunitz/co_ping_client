@@ -3,7 +3,7 @@ describe("Admin can see pending requests", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "**/admin/communities/**",
+      url: "**/admin/communities",
       response: "fixture:pending_requests.json",
     });
     cy.visit("/");
@@ -21,5 +21,8 @@ describe("Admin can see pending requests", () => {
       "contain",
       "Pending Requests to Community"
     );
+    cy.get('#request-list').within(() => {
+      cy.get('#request-23').should('contain', 'Betty')
+    })
   });
 });

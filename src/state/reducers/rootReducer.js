@@ -28,6 +28,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         showPendingRequests: true,
       };
+    case actionTypes.GET_PENDING_REQUESTS:
+      return {
+        ...state,
+        ...action.payload,
+        showPendingRequests: true,
+      };
     default:
       return state;
   }
