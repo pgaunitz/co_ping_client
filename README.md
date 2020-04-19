@@ -9,7 +9,7 @@ Add a printscreen of the deployed site.
 
 ### So what is Co-Ping?
 
-Co-Ping is the cooperate shopping app for amazing neighbor's. With it you can announce when you'll go shopping so that a neighbor who may need one or two items can request you pick it up for them. Next time, when they go shopping, you may be out of something and they can return the favour. This app is about bringing people in a co-operative or neighbourhood closer - one kind gesture at a time.
+Co-Ping is the cooperate shopping app for amazing neighbor's. With it you can announce when you'll go shopping so that a neighbor who may need one or two items can request you pick it up for them. Next time, when they go shopping, you may be out of something and they can return the favour. This app is about bringing people in a co-operative or neighborhood closer - one kind gesture at a time.
 
 ### Let's get started
 
