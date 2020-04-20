@@ -2,8 +2,7 @@ import JtockAuth from "j-tockauth";
 import { AUTHENTICATE, LOGOUT } from "../state/actions/actionTypes";
 
 const auth = new JtockAuth({
-  // host: "https://co-ping.herokuapp.com"
-  host: "http://localhost:3000"
+  host: "https://co-ping.herokuapp.com"
 });
 
 const onLogin = async (event, dispatch) => {
