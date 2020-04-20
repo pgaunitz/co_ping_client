@@ -33,8 +33,7 @@ describe("Admin can see pending requests", () => {
       cy.get('#accept-request-23').click()
     })
     cy.get("#confirmation-message").should(
-      "contain",
-      "User is now accepted to your community"
+      "exist"
     );
     
     cy.get("#request-list").within(() => {

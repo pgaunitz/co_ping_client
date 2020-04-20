@@ -7,7 +7,7 @@ import {
 const getPendingRequests = async (dispatch) => {
   let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"));
   let response = await axios.get("/admin/communities", { headers: headers });
-  debugger
+
   if (response.data.requests) {
     dispatch({
       type: GET_PENDING_REQUESTS,
@@ -23,7 +23,6 @@ const getPendingRequests = async (dispatch) => {
 
 const acceptRequest = async (userId, communityId, dispatch) => {
   let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"));
-  debugger;
   let response = await axios.put(
     `/admin/communities/${communityId}`,
     {
@@ -35,7 +34,6 @@ const acceptRequest = async (userId, communityId, dispatch) => {
     },
     { headers: headers }
   );
-  debugger;
   dispatch({
     type: CONFIRMATION_MESSAGE,
     payload: { confirmationMessage: response.data.message },
