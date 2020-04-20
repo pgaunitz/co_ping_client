@@ -16,13 +16,34 @@ const rootReducer = (state = initialState, action) => {
     case actionTypes.LOGOUT:
       return {
         ...initialState,
-        ...action.payload
+        ...action.payload,
       };
     case actionTypes.CLOSE_LOGIN:
       return {
         ...state,
         showLoginForm: false,
       };
+    case actionTypes.SHOW_PENDING_REQUESTS:
+      return {
+        ...state,
+        showPendingRequests: true,
+      };
+    case actionTypes.GET_PENDING_REQUESTS:
+      return {
+        ...state,
+        ...action.payload,
+        showPendingRequests: true,
+      };
+    case actionTypes.CONFIRMATION_MESSAGE:
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case actionTypes.SET_NAME:
+      return {
+        ...state,
+        ...action.payload
+      }
     default:
       return state;
   }

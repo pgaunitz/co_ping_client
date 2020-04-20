@@ -17,4 +17,18 @@ background-repeat: no-repeat;
   color: white;
   font-family: Futura;
 }
+#logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+#button-container {
+  flex: 1;
+  flex-direction: row;
+}
+.reject {
+  color: white;
+}
+.accept {
+
+}
 
