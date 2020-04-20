@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Button, Box, Text } from "grommet";
+import { Button, Box, Heading } from "grommet";
 import { onLogout } from "../modules/authentication";
 
 const LoginMessage = () => {
@@ -8,8 +8,13 @@ const LoginMessage = () => {
   const loginMessage = useSelector(state => state.loginMessage);
   return (
     <Box>
-      <Text id="welcome-message">{loginMessage}</Text>
-      <Button label="Logout" onClick={() => onLogout(dispatch)} />
+      <Heading level='3' id="welcome-message">{loginMessage}</Heading>
+      <Button
+        margin="small"
+        color="white"
+        label="Logout"
+        onClick={() => onLogout(dispatch)}
+      />
     </Box>
   );
 };

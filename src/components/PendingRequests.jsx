@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Box, Text } from "grommet";
+import { Box, Text, Heading } from "grommet";
 import { getPendingRequests } from "../modules/requestAction";
 import { useSelector, useDispatch } from 'react-redux';
 import UserInformation from "./UserInformation";
@@ -21,7 +21,7 @@ const PendingRequests = () => {
   }
   return (
     <Box>
-      <Text id="request-header">Pending Requests to Community</Text>
+      <Heading level='3' id="request-header">Pending Requests to Community</Heading>
       <Box id='request-list'>{displayRequests}</Box>
     </Box>
   );

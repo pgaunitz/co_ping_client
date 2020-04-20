@@ -5,18 +5,16 @@ import configureStore from "./state/store/configureStore";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 
 const store = configureStore();
 window.store = store;
-axios.defaults.baseURL = "https://co-ping.herokuapp.com";
+// axios.defaults.baseURL = "https://co-ping.herokuapp.com";
+axios.defaults.baseURL = "http://localhost:3000";
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
       <App />
-    </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 );
