@@ -34,6 +34,16 @@ const rootReducer = (state = initialState, action) => {
         ...action.payload,
         showPendingRequests: true,
       };
+    case actionTypes.CONFIRMATION_MESSAGE:
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case actionTypes.SET_NAME:
+      return {
+        ...state,
+        ...action.payload
+      }
     default:
       return state;
   }

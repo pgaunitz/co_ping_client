@@ -2,28 +2,20 @@ import React, { useEffect } from "react";
 import { Box, Text } from "grommet";
 import { getPendingRequests } from "../modules/requestAction";
 import { useSelector, useDispatch } from 'react-redux';
+import UserInformation from "./UserInformation";
 
 const PendingRequests = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
     getPendingRequests(dispatch);
   }, []);
 
   const pendingRequests = useSelector(state => state.pendingRequests);
   const noRequestsMessage = useSelector(state => state.noRequestsMessage);
-
-  let displayRequests
+  
+  let displayRequests;
   if (pendingRequests) {
-    displayRequests = pendingRequests.map((request) => {
-      return (
-        <Box id={`request-${request.id}`}>
-          <Text>{request.name}</Text>
-          <Text>{request.email}</Text>
-          <Text>{request.phone_number}</Text>
-          <Text>{request.adress}</Text>
-        </Box>
-      );
-    })
+    displayRequests = <UserInformation />;
   } else {
     displayRequests = <Text id='requests-message'>{noRequestsMessage}</Text>;
   }

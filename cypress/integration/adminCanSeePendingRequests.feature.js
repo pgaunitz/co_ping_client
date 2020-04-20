@@ -6,6 +6,11 @@ describe("Admin can see pending requests", () => {
       url: "**/admin/communities",
       response: "fixture:pending_requests.json",
     });
+    cy.route({
+      method: "PUT",
+      url: "**/admin/communities/**",
+      response: "fixture:accepted_user_message.json",
+    });
     cy.visit("/");
     cy.window().then((window) => {
       window.store.dispatch({
@@ -15,7 +20,7 @@ describe("Admin can see pending requests", () => {
     });
   });
 
-  it("can see list of pending requests", () => {
+  it("can see list of pending requests and accept user", () => {
     cy.get('#show-requests').click()
     cy.get("#request-header").should(
       "contain",
@@ -25,7 +30,13 @@ describe("Admin can see pending requests", () => {
       cy.get("#request-23").should("contain", "Berry IdontloveBaconsson");
       cy.get("#request-23").should("contain", "user5024@mail.com");
       cy.get("#request-23").should("contain", "Baconstreet 37, floor 2");
+      cy.get('#accept-request-23').click()
     })
+    cy.get("#confirmation-message").should(
+      "contain",
+      "User is now accepted to your community"
+    );
+    
     cy.get("#request-list").within(() => {
       cy.get("#request-42").should("contain", "Grym Pungråttsson");
       cy.get("#request-42").should("contain", "user6642@mail.com");
