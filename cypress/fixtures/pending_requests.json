@@ -3,17 +3,17 @@
   [
     {
       "id": 23,
-      "name": "Betty",
+      "name": "Berry IdontloveBaconsson",
       "email": "user5024@mail.com",
       "phone_number": "123456789",
       "adress": "Baconstreet 37, floor 2"
     },
     {
       "id": 42,
-      "name": "Betty",
+      "name": "Grym Pungråttsson",
       "email": "user6642@mail.com",
       "phone_number": "123456789",
-      "adress": "Baconstreet 37, floor 2"
+      "adress": "Baconstreet 37, floor 3"
     }
   ]
 }

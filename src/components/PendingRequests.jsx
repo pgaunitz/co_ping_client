@@ -25,7 +25,7 @@ const PendingRequests = () => {
       );
     })
   } else {
-    displayRequests = <Text>{noRequestsMessage}</Text>;
+    displayRequests = <Text id='requests-message'>{noRequestsMessage}</Text>;
   }
   return (
     <Box>
