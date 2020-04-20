@@ -12,12 +12,6 @@ describe("Admin can log in", () => {
       response: "fixture:admin_login.json",
     });
     cy.visit("/");
-    cy.window().then((window) => {
-      window.store.dispatch({
-        type: "AUTHENTICATE",
-        payload: { authenticated: true, communityId: 1, userRole: "admin" },
-      });
-    });
   });
 
   it("show a login button and form", () => {
