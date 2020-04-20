@@ -26,9 +26,28 @@ const acceptRequest = async (userId, communityId, dispatch) => {
   let response = await axios.put(
     `/admin/communities/${communityId}`,
     {
-      user_admisson: {
+      user_admission: {
         community_id: communityId,
         community_status: "accepted",
+        user_id: userId,
+      }
+    },
+    { headers: headers },
+  );
+  dispatch({
+    type: CONFIRMATION_MESSAGE,
+    payload: { confirmationMessage: response.data.message },
+  });
+};
+
+const rejectRequest = async (userId, communityId, dispatch) => {
+  let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"));
+  let response = await axios.put(
+    `/admin/communities/${communityId}`,
+    {
+      user_admission: {
+        community_id: communityId,
+        community_status: "rejected",
         user_id: userId,
       },
     },
@@ -41,4 +60,4 @@ const acceptRequest = async (userId, communityId, dispatch) => {
 };
 
 
-export { getPendingRequests, acceptRequest };
+export { getPendingRequests, acceptRequest, rejectRequest };

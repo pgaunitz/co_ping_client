@@ -12,7 +12,6 @@ const onLogin = async (event, dispatch) => {
       event.target.email.value,
       event.target.password.value
     );
-    debugger
     dispatch({
       type: AUTHENTICATE,
       payload: {

@@ -10,7 +10,7 @@ import axios from "axios";
 
 const store = configureStore();
 window.store = store;
-axios.defaults.baseURL = "https://co-ping.herokuapp.com/";
+axios.defaults.baseURL = "https://co-ping.herokuapp.com";
 
 ReactDOM.render(
   <Provider store={store}>

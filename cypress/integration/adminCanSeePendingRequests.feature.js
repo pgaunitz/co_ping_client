@@ -40,7 +40,9 @@ describe("Admin can see pending requests", () => {
       cy.get("#request-42").should("contain", "Grym Pungråttsson");
       cy.get("#request-42").should("contain", "user6642@mail.com");
       cy.get("#request-42").should("contain", "Baconstreet 37, floor 3");
+      cy.get("#reject-request-42").click();
     });
+    cy.get("#confirmation-message").should("exist");
   });
 });
 
