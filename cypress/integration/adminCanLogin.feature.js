@@ -91,7 +91,6 @@ describe("User can log in and get message about being unauthorized", () => {
   });
 
   it("show a login button and form", () => {
-
     cy.get("button")
       .contains("Login")
       .click();

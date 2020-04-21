@@ -8,7 +8,7 @@ import grommet from "grommet/themes";
 import co_ping_Logo2 from "./images/co_ping_Logo2.png";
 import NotAdmin from "./components/NotAdmin";
 import Admin from "./components/Admin";
-import RequestButton from "./components/RequestButton";
+import AboutCoPing from "./components/AboutCoPing";
 
 const App = () => {
   const authenticated = useSelector(state => state.authenticated);
@@ -25,7 +25,7 @@ const App = () => {
         {showLoginForm && <LoginForm />}
         {userRole === "user" && <NotAdmin />}
         {userRole === "admin" && <Admin />}
-        {!authenticated && <RequestButton/>}
+        {!authenticated && <AboutCoPing/>}
       </Main>
     </Grommet>
   );
