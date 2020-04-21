@@ -22,10 +22,10 @@ To start working on this project you will need to fork [this Repo](https://githu
 * [RSpec](https://rspec.info/)
 
 ##### ... additional packages and gems includes
-* [Package or gem 1](link)
-* [Package or gem 2](link)
-* [Package or gem 3](link)
-* [Package or gem 4](link)
+* [Axios](link)
+* [J-tockAuth](link)
+* [Grommet](link)
+* [React Redux](link)
 
 ##### we love to deploy with...
 
