@@ -5,8 +5,8 @@ import { SHOW_LOGIN_FORM } from "../state/actions/actionTypes";
 
 const LoginButton = () => {
   const dispatch = useDispatch();
-  const logoutMessage = useSelector(state => state.logoutMessage);
-  const authenticated = useSelector(state => state.authenticated);
+  const logoutMessage = useSelector((state) => state.logoutMessage);
+  const authenticated = useSelector((state) => state.authenticated);
 
   return (
     <>

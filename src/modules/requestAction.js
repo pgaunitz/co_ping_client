@@ -7,11 +7,10 @@ import {
 const getPendingRequests = async (dispatch) => {
   let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"));
   let response = await axios.get("/admin/communities", { headers: headers });
-
-  if (response.data.requests) {
+  if (response.data.users) {
     dispatch({
       type: GET_PENDING_REQUESTS,
-      payload: { pendingRequests: response.data.requests },
+      payload: { pendingRequests: response.data.users },
     });
   } else {
     dispatch({
@@ -30,9 +29,9 @@ const acceptRequest = async (userId, communityId, dispatch) => {
         community_id: communityId,
         community_status: "accepted",
         user_id: userId,
-      }
+      },
     },
-    { headers: headers },
+    { headers: headers }
   );
   dispatch({
     type: CONFIRMATION_MESSAGE,
@@ -58,6 +57,5 @@ const rejectRequest = async (userId, communityId, dispatch) => {
     payload: { confirmationMessage: response.data.message },
   });
 };
-
 
 export { getPendingRequests, acceptRequest, rejectRequest };
