@@ -7,11 +7,10 @@ import {
 const getPendingRequests = async (dispatch) => {
   let headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"));
   let response = await axios.get("/admin/communities", { headers: headers });
-
-  if (response.data.requests) {
+  if (response.data.users) {
     dispatch({
       type: GET_PENDING_REQUESTS,
-      payload: { pendingRequests: response.data.requests },
+      payload: { pendingRequests: response.data.users },
     });
   } else {
     dispatch({
