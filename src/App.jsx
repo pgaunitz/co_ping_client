@@ -25,7 +25,7 @@ const App = () => {
         {showLoginForm && <LoginForm />}
         {userRole === "user" && <NotAdmin />}
         {userRole === "admin" && <Admin />}
-        <RequestButton/>
+        {!authenticated && <RequestButton/>}
       </Main>
     </Grommet>
   );

@@ -11,7 +11,7 @@ const LoginButton = () => {
   return (
     <>
       <Button
-        margin="small"
+        margin="large"
         color="white"
         label="Login"
         onClick={() =>
