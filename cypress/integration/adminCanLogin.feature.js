@@ -15,6 +15,8 @@ describe("Admin can log in", () => {
   });
 
   it("show a login button and form", () => {
+    cy.get("#info-box").should("exist");
+    cy.get("#contact-button").should("exist");
     cy.get("button")
       .contains("Login")
       .click();
@@ -26,6 +28,8 @@ describe("Admin can log in", () => {
         .click();
     });
     cy.get("#welcome-message").should("contain", "Welcome Admin Adminsson");
+    cy.get("#info-box").should("not.exist");
+    cy.get("#contact-button").should("not.exist");
     cy.get("button")
       .contains("Logout")
       .click();
@@ -90,6 +94,7 @@ describe("User can log in and get message about being unauthorized", () => {
     cy.get("button")
       .contains("Login")
       .click();
+
     cy.get("#login-form").within(() => {
       cy.get("#email").type("user@mail.com");
       cy.get("#password").type("password");

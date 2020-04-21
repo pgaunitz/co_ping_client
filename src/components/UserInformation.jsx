@@ -27,7 +27,7 @@ const UserInformation = () => {
             <Text>Name: {request.name}</Text>
             <Text>Email: {request.email}</Text>
             <Text>Phone: {request.phone_number}</Text>
-            <Text>Address: {request.adress}</Text>
+            <Text>Address: {request.address}</Text>
             <Box id="button-container">
               <Button
                 color="#6FFFB0"
