@@ -1,11 +1,6 @@
-# Co-Ping (Browser Client)
+# Co-Ping (Browser Client) [![Netlify Status](https://api.netlify.com/api/v1/badges/14e6c98a-62dd-4802-ac16-fe1649b36d37/deploy-status)](https://app.netlify.com/sites/co-ping/deploys)
 
-#### Netlify badge
-Visit the settings of your deployed site and copy the deploy badge, put it up right beside the title and delete this paragraph.
-
-#### Image
-Add a printscreen of the deployed site.
-![printscreen of deployed site](link)
+![Co-ping image](public/copingWide.png)
 
 ### So what is Co-Ping?
 
