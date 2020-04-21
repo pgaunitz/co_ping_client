@@ -29,9 +29,9 @@ const acceptRequest = async (userId, communityId, dispatch) => {
         community_id: communityId,
         community_status: "accepted",
         user_id: userId,
-      }
+      },
     },
-    { headers: headers },
+    { headers: headers }
   );
   dispatch({
     type: CONFIRMATION_MESSAGE,
@@ -57,6 +57,5 @@ const rejectRequest = async (userId, communityId, dispatch) => {
     payload: { confirmationMessage: response.data.message },
   });
 };
-
 
 export { getPendingRequests, acceptRequest, rejectRequest };
