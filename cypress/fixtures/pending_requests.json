@@ -7,7 +7,7 @@
       "email": "user5024@mail.com",
       "community_status": "pending",
       "phone_number": "123456789",
-      "adress": "Baconstreet 37, floor 2"
+      "address": "Baconstreet 37, floor 2"
     },
     {
       "id": 42,
@@ -15,7 +15,7 @@
       "email": "user6642@mail.com",
       "community_status": "pending",
       "phone_number": "123456789",
-      "adress": "Baconstreet 37, floor 3"
+      "address": "Baconstreet 37, floor 3"
     }
   ]
 }
