@@ -4,7 +4,7 @@
 
 ### So what is Co-Ping?
 
-Co-Ping is the cooperate shopping app for amazing neighbor's. With it you can announce when you'll go shopping so that a neighbor who may need one or two items can request you pick it up for them. Next time, when they go shopping, you may be out of something and they can return the favour. This app is about bringing people in a co-operative or neighborhood closer - one kind gesture at a time.
+Co-Ping is the cooperative shopping app for amazing neighbor's. With it you can announce when you'll go shopping so that a neighbor who may need a few items can request you pick it up for them. Next time, when they go shopping, you may be out of something and they can return the favour. This app is about bringing people in a co-operative or neighborhood closer - one kind gesture at a time (while saving time, money and reducing consumption).
 
 ### Let's get started
 
@@ -22,10 +22,10 @@ To start working on this project you will need to fork [this Repo](https://githu
 * [RSpec](https://rspec.info/)
 
 ##### ... additional packages and gems includes
-* [Axios](link)
-* [J-tockAuth](link)
-* [Grommet](link)
-* [React Redux](link)
+* [Axios](https://www.npmjs.com/package/axios)
+* [J-tockAuth](https://www.npmjs.com/package/j-tockauth)
+* [Grommet](https://v2.grommet.io/)
+* [React Redux](https://react-redux.js.org/)
 
 ##### we love to deploy with...
 
@@ -40,11 +40,6 @@ To start working on this project you will need to fork [this Repo](https://githu
 
 ##### Installments
 Now let's get to it shall we?
-
-... get Ruby on Rails
-```
-gem install rails
-```
 ... get the gems needed
 
 ```
@@ -75,7 +70,7 @@ yarn start
 **... There, now you should be good to go. make some coder magic!**
 
 ### Updates and improvements
-There are still some things to check off before we feel "done" with this project (if you're ver done with anything) and that would primarily be:
+There are still some things to check off before we feel "done" with this project (if you're ever done with anything) and that would primarily be:
 * This
 * That
 * Oh and that too
