@@ -34,3 +34,8 @@ margin-bottom: 50px;
 #confirmation-message {
   margin-bottom: 35px;
 }
+
+#login-form{
+  align-items: center;
+  display: inline-block;
+}
