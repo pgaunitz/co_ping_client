@@ -2,15 +2,21 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Form, TextInput, Button, Text } from "grommet";
 import { onLogin } from "../modules/authentication";
-import { CLOSE_LOGIN } from "../state/actions/actionTypes"
+import { CLOSE_LOGIN, LOADING } from "../state/actions/actionTypes";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const loginMessage = useSelector(state => state.loginMessage);
+  const loginMessage = useSelector((state) => state.loginMessage);
 
   return (
     <Box>
-      <Form id="login-form" onSubmit={event => onLogin(event, dispatch)}>
+      <Form
+        id="login-form"
+        onSubmit={(event) => {
+          onLogin(event, dispatch);
+          dispatch({ type: LOADING, payload: { loading: true } });
+        }}
+      >
         <TextInput id="email" name="email" placeholder="email" />
         <TextInput
           id="password"

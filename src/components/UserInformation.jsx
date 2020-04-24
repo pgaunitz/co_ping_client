@@ -21,7 +21,7 @@ const UserInformation = () => {
 
   let userInformation = pendingRequests.map((request) => {
     return (
-      <Box id={`request-${request.id}`} key={request.id}>
+      <Box id={`request-${request.id}`} key={request.id} className='user-container'>
         {userName !== request.name && (
           <>
             <Text>Name: {request.name}</Text>
@@ -68,7 +68,7 @@ const UserInformation = () => {
   return (
     <>
       {confirmationMessage && (
-        <Text id="confirmation-message">
+        <Text id="confirmation-message" size='large'>
           {`${userName} 
             ${confirmationMessage}`}
         </Text>

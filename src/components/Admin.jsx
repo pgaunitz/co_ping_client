@@ -2,7 +2,7 @@ import React from "react";
 import PendingRequests from "./PendingRequests";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "grommet";
-import {SHOW_PENDING_REQUESTS} from "../state/actions/actionTypes" 
+import {SHOW_PENDING_REQUESTS, CLOSE_PENDING_REQUESTS} from "../state/actions/actionTypes" 
 
 const Admin = () => {
   const dispatch = useDispatch();
@@ -17,6 +17,12 @@ const Admin = () => {
         onClick={() => dispatch({ type: SHOW_PENDING_REQUESTS })}
       />
       {showPendingRequests && <PendingRequests />}
+      {showPendingRequests && <Button
+        color="white"
+        label="Back"
+        margin="small"
+        onClick={() => dispatch({ type: CLOSE_PENDING_REQUESTS })}
+      />}
     </>
   );
 };

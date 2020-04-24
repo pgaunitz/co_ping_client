@@ -20,9 +20,14 @@ const PendingRequests = () => {
     displayRequests = <Text id='requests-message'>{noRequestsMessage}</Text>;
   }
   return (
-    <Box>
-      <Heading level='3' id="request-header">Pending Requests to Community</Heading>
-      <Box id='request-list'>{displayRequests}</Box>
+    <Box id="request-container">
+      <Heading level="3" id="request-header">
+        Pending Requests to Community
+      </Heading>
+
+      <Box id="request-list" className="parallax">
+        {displayRequests}
+      </Box>
     </Box>
   );
 };

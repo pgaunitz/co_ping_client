@@ -1,7 +1,9 @@
 const initialState = {
   showLoginForm: false,
   authenticated: false,
-  userName: ''
+  userName: "",
+  loading: false,
+  showPendingRequests: false
 };
 
 export default initialState;

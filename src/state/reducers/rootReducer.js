@@ -42,8 +42,18 @@ const rootReducer = (state = initialState, action) => {
     case actionTypes.SET_NAME:
       return {
         ...state,
-        ...action.payload
-      }
+        ...action.payload,
+      };
+    case actionTypes.LOADING:
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case actionTypes.CLOSE_PENDING_REQUESTS:
+      return {
+        ...state,
+        showPendingRequests: false,
+      };
     default:
       return state;
   }

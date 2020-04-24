@@ -9,11 +9,13 @@ import co_ping_Logo2 from "./images/co_ping_Logo2.png";
 import NotAdmin from "./components/NotAdmin";
 import Admin from "./components/Admin";
 import AboutCoPing from "./components/AboutCoPing";
+import ClipLoader from 'react-spinners/ClipLoader'
 
 const App = () => {
   const authenticated = useSelector(state => state.authenticated);
   const showLoginForm = useSelector(state => state.showLoginForm);
   const userRole = useSelector((state) => state.userRole);
+  const loading = useSelector((state) => state.loading);
 
   return (
     <Grommet full theme={grommet}>
@@ -23,9 +25,14 @@ const App = () => {
       <Main fill align="center" justify="top">
         {authenticated ? <LoginMessage /> : <LoginButton />}
         {showLoginForm && <LoginForm />}
+        <ClipLoader
+          color={"white"}
+          loading={loading}
+          align={'center'}
+        />
         {userRole === "user" && <NotAdmin />}
         {userRole === "admin" && <Admin />}
-        {!authenticated && <AboutCoPing/>}
+        {!authenticated && <AboutCoPing />}
       </Main>
     </Grommet>
   );
